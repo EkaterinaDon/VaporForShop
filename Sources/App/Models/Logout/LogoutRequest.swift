@@ -9,5 +9,5 @@ import Foundation
 import Vapor
 
 struct LogoutRequest: Content {
-    var username: String
+    var id_user: Int //username
 }
