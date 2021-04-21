@@ -9,6 +9,10 @@ import Foundation
 import Vapor
 
 struct CatalogDataResponse: Content {
-    var page_number: Int
+    var id_product: Int
+    var product_name: String
+    var price: Int
+    var user_message: String?
     var error_message: String?
 }
+

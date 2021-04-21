@@ -10,6 +10,4 @@ import Vapor
 
 struct ProductRequest: Content {
     var id_product: Int
-    var product_name: String
-    var price: Int
 }

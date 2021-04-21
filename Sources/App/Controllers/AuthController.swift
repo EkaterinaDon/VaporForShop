@@ -34,6 +34,7 @@ class AuthController {
         
         let response = AuthResponse(
             result: 1,
+            user_message: "Авторизация прошла успешно!",
             error_message: nil
         )
         
@@ -49,6 +50,7 @@ class AuthController {
         
         let response = LogoutResponse(
             result: 1,
+            user_message: "Вы успешно вышли!",
             error_message: nil
         )
         

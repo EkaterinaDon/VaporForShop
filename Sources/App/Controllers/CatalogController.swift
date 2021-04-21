@@ -9,18 +9,20 @@ import Foundation
 import Vapor
 
 class CatalogController {
-    func catalogData(_ req: Request) throws -> EventLoopFuture<CatalogDataResponse> {
+    func catalogData(_ req: Request) throws -> EventLoopFuture<[CatalogDataResponse]> {
         guard let body = try? req.content.decode(CatalogDataRequest.self) else {
             throw Abort(.badRequest)
         }
         
         print(body)
         
-        let response = CatalogDataResponse(
-            page_number: 1,
-            error_message: nil
-        )
-        
+        let response = [CatalogDataResponse(
+                            id_product: 123,
+                            product_name: "Смартфон",
+                            price: 1000,
+                            user_message: "Каталог получен",
+                            error_message: nil)]
+            
         return req.eventLoop.future(response)
     }
     
@@ -33,8 +35,11 @@ class CatalogController {
         
         let response = ProductResponse(
             result: 1,
-            error_message: nil
-        )
+            product_name: "Мышка",
+            product_price: 750,
+            product_description: "Мышка",
+            user_message: "Информация о товаре получена",
+            error_message: nil)
         
         return req.eventLoop.future(response)
     }
