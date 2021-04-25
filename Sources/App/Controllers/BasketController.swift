@@ -18,7 +18,7 @@ class BasketController {
         
         let response = AddToBasketResponse(
             result: 1,
-            user_message: "Товар добавлен в карзину!",
+            user_message: "Товар добавлен в корзину!",
             error_message: nil)
         
         return req.eventLoop.future(response)
@@ -33,7 +33,7 @@ class BasketController {
 
         let response = RemoveFromBasketResponse(
             result: 1,
-            user_message: "Товар удален из карзины!",
+            user_message: "Товар удален из корзины!",
             error_message: nil
         )
 
